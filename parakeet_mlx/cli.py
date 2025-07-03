@@ -339,8 +339,10 @@ def transcribe(
                         print(line)
 
                 base_filename = audio_path.stem
+                parent = str(audio_path.parent)
                 template_vars = {
                     "filename": base_filename,
+                    "parent": parent,
                     "date": datetime.datetime.now().strftime("%Y%m%d"),
                     "index": str(i + 1),
                 }
