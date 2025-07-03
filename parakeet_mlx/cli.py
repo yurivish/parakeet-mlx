@@ -198,7 +198,7 @@ def transcribe(
     output_template: Annotated[
         str,
         typer.Option(
-            help="Template for output filenames, e.g. '{filename}_{date}_{index}'",
+            help="Template for output filenames, e.g. '{parent}/{filename}_{date}_{index}'",
             envvar="PARAKEET_OUTPUT_TEMPLATE",
         ),
     ] = "{filename}",
