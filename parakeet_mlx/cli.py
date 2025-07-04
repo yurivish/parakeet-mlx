@@ -353,12 +353,12 @@ def transcribe(
                     formatter = formatters[fmt]
                     output_content = formatter(result)
                     output_filename = f"{output_basename}.{fmt}"
-                    output_filepath = output_dir / output_filename
+                    output_filepath = Path(output_filename) # output_dir /
 
                     try:
                         with open(output_filepath, "w", encoding="utf-8") as f:
                             f.write(output_content)
-                        if verbose:
+                        if verbose or not verbose:
                             print(
                                 f"[green]Saved {fmt.upper()}:[/green] {output_filepath.absolute()}"
                             )
